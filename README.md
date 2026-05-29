@@ -2,7 +2,7 @@
 
 A YouTube channel analytics dashboard. Search any channel by name or @handle and get a breakdown of views, engagement, upload timing, and more.
 
-🌐 **Live site → [check-celeb.vercel.app](https://check-celeb.vercel.app)**
+🌐 **Live site: [check-celeb.vercel.app](https://check-celeb.vercel.app)**
 
 ## Features
 
@@ -13,15 +13,15 @@ A YouTube channel analytics dashboard. Search any channel by name or @handle and
 - Average views by day of week
 - Shorts vs regular video comparison
 - TOP 5 most-viewed videos
-- Comment word cloud from top 5 videos (English & Korean stopwords filtered)
+- Comment word cloud from top 5 videos (English and Korean stopwords filtered)
 
 ## Tech Stack
 
 - **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS v4**
-- **Recharts** — charts
-- **d3-cloud** — word cloud layout
+- **Recharts** (charts)
+- **d3-cloud** (word cloud layout)
 - **YouTube Data API v3**
 
 ## Getting Started
@@ -29,7 +29,7 @@ A YouTube channel analytics dashboard. Search any channel by name or @handle and
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/your-username/CheckCeleb.git
+git clone https://github.com/itshyunseunglee/CheckCeleb.git
 cd CheckCeleb
 npm install
 ```
@@ -46,23 +46,7 @@ Open `.env.local` and add your YouTube API key:
 YOUTUBE_API_KEY=your_api_key_here
 ```
 
-You can get one from the [Google Cloud Console](https://console.cloud.google.com/) — enable **YouTube Data API v3** and create a credential.
-
-### 3. Run
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Running Tests
-
-```bash
-npm test
-```
-
-Covers the core utility functions — number formatter, Shorts detection, day-of-week parser.
+You can get one from the [Google Cloud Console](https://console.cloud.google.com/). Enable **YouTube Data API v3** and create a credential.
 
 ## API Quota
 
@@ -71,7 +55,7 @@ YouTube Data API has a default limit of **10,000 units/day**.
 | Action | Quota used (approx) |
 |---|---|
 | Channel search | ~100 units |
-| Video list (up to 200 videos) | ~400–800 units |
+| Video list (up to 200 videos) | ~400-800 units |
 | Comment word cloud | ~5 units per video |
 
 Fine for personal use. For a public deployment, consider adding server-side caching or requesting a quota increase in Google Cloud.
