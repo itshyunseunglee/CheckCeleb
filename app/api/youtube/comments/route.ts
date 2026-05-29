@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 function stripHtml(html: string): string {
   return html
@@ -15,10 +14,6 @@ function stripHtml(html: string): string {
 }
 
 export async function GET(req: NextRequest) {
-  if (!checkRateLimit(getClientIp(req), 'comments', 10)) {
-    return NextResponse.json({ error: 'Too many requests. Please wait a moment.' }, { status: 429 });
-  }
-
   const videoId = req.nextUrl.searchParams.get('videoId');
   const maxResults = Math.min(parseInt(req.nextUrl.searchParams.get('maxResults') || '100'), 100);
   if (!videoId) return NextResponse.json({ error: 'Video ID is required.' }, { status: 400 });

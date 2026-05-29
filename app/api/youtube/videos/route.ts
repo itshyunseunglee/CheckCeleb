@@ -1,14 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { isShortVideo } from '@/lib/utils';
-import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
-
 const ISO_DATE_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
 
 export async function GET(req: NextRequest) {
-  if (!checkRateLimit(getClientIp(req), 'videos', 5)) {
-    return NextResponse.json({ error: 'Too many requests. Please wait a moment.' }, { status: 429 });
-  }
-
   const channelId = req.nextUrl.searchParams.get('channelId');
   const count = Math.min(Math.max(1, parseInt(req.nextUrl.searchParams.get('count') || '20')), 200);
   const publishedAfter = req.nextUrl.searchParams.get('publishedAfter') || '';

@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 export async function GET(req: NextRequest) {
-  if (!checkRateLimit(getClientIp(req), 'channel', 30)) {
-    return NextResponse.json({ error: 'Too many requests. Please wait a moment.' }, { status: 429 });
-  }
-
   const channelId = req.nextUrl.searchParams.get('id');
   if (!channelId) return NextResponse.json({ error: 'Channel ID is required.' }, { status: 400 });
   if (!/^[a-zA-Z0-9_\-]{1,64}$/.test(channelId)) return NextResponse.json({ error: 'Invalid channel ID.' }, { status: 400 });

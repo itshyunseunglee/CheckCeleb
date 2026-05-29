@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 const resizeThumb = (url: string) =>
   url ? url.replace(/=s\d+(-[^?#]*)?$/, '=s88-c-k-c0x00ffffff-no-rj') : '';
@@ -37,10 +36,6 @@ async function fetchChannelByParam(param: string, value: string, apiKey: string)
 }
 
 export async function GET(req: NextRequest) {
-  if (!checkRateLimit(getClientIp(req), 'search', 10)) {
-    return NextResponse.json({ error: 'Too many requests. Please wait a moment.' }, { status: 429 });
-  }
-
   const query = req.nextUrl.searchParams.get('q');
   if (!query) return NextResponse.json({ error: 'Please enter a search query.' }, { status: 400 });
   if (query.length > 100) return NextResponse.json({ error: 'Search query is too long.' }, { status: 400 });
