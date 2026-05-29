@@ -87,6 +87,7 @@ export default function SearchPage() {
           <span className="text-white">Celeb</span>
         </h1>
         <p className="text-gray-400 text-base sm:text-lg">Deep-dive analytics for any YouTube channel</p>
+        <p className="text-gray-600 text-xs mt-2">Runs on a shared API quota (10,000 units/day). If it stops working, check back tomorrow.</p>
       </div>
 
       <div className="w-full max-w-2xl space-y-6">
