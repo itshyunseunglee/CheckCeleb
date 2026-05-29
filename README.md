@@ -50,15 +50,15 @@ You can get one from the [Google Cloud Console](https://console.cloud.google.com
 
 ## API Quota
 
-YouTube Data API has a default limit of **10,000 units/day**.
+YouTube Data API has a default limit of **10,000 units/day**. The live site runs on a shared quota, so heavy usage may temporarily return a "quota exceeded" error. If that happens, try again the next day when the quota resets.
 
 | Action | Quota used (approx) |
 |---|---|
 | Channel search | ~100 units |
-| Video list (up to 200 videos) | ~400-800 units |
+| Video list (up to 200 videos) | ~6 units |
 | Comment word cloud | ~5 units per video |
 
-Fine for personal use. For a public deployment, consider adding server-side caching or requesting a quota increase in Google Cloud.
+To self-host without quota limits, clone the repo and add your own API key.
 
 ## Project Structure
 
@@ -72,7 +72,7 @@ components/
   ui/                   # Shared UI (card, spinner, error message)
 lib/
   utils.ts              # Formatters and date helpers
-  rateLimit.ts          # IP-based rate limiter
+  rateLimit.ts          # Rate limiter
 types/
   index.ts              # Shared types
 ```
