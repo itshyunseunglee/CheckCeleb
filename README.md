@@ -2,6 +2,8 @@
 
 A YouTube channel analytics dashboard. Search any channel by name or @handle and get a breakdown of views, engagement, upload timing, and more.
 
+🌐 **Live site → [check-celeb.vercel.app](https://check-celeb.vercel.app)**
+
 ## Features
 
 - Search by channel name or @handle
