@@ -4,6 +4,8 @@ A YouTube channel analytics dashboard. Search any channel by name or @handle and
 
 🌐 **Live site: [check-celeb.vercel.app](https://check-celeb.vercel.app)**
 
+![CheckCeleb screenshot](public/screenshot.png)
+
 ## Features
 
 - Search by channel name or @handle
