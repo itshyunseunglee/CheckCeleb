@@ -55,7 +55,7 @@ YouTube Data API has a default limit of **10,000 units/day**. The live site runs
 | Action | Quota used (approx) |
 |---|---|
 | Channel search | ~100 units |
-| Video list (up to 200 videos) | ~6 units |
+| Video list (up to 200 videos) | ~8 units |
 | Comment word cloud | ~5 units per video |
 
 To self-host without quota limits, clone the repo and add your own API key.
@@ -72,7 +72,6 @@ components/
   ui/                   # Shared UI (card, spinner, error message)
 lib/
   utils.ts              # Formatters and date helpers
-  rateLimit.ts          # Rate limiter
 types/
   index.ts              # Shared types
 ```
