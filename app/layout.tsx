@@ -1,27 +1,59 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+const TITLE = 'CheckCeleb - Free YouTube Channel Analytics Tool';
+const DESCRIPTION = 'Check any YouTube channel\'s stats for free. View trend, engagement rate, upload timing, Shorts vs regular video breakdown, and comment word cloud. No login required.';
+const SITE_URL = 'https://check-celeb.vercel.app';
+
 export const metadata: Metadata = {
   verification: { google: 'fQmix3taVlm19n7yQShQpyXbd63iQ2u2IQykePVAF7w' },
-  title: 'CheckCeleb - YouTube Channel Analytics',
-  description: 'Search any YouTube channel and get a breakdown of views, engagement, upload timing, and more.',
+  title: TITLE,
+  description: DESCRIPTION,
+  keywords: ['YouTube analytics', 'YouTube channel stats', 'YouTube channel checker', 'YouTube channel analyzer', 'YouTube views tracker', 'check YouTube channel'],
+  authors: [{ name: 'Hyunseung Lee' }],
+  creator: 'Hyunseung Lee',
+  metadataBase: new URL(SITE_URL),
+  alternates: { canonical: SITE_URL },
   openGraph: {
-    title: 'CheckCeleb - YouTube Channel Analytics',
-    description: 'Search any YouTube channel and get a breakdown of views, engagement, upload timing, and more.',
-    url: 'https://check-celeb.vercel.app',
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
     siteName: 'CheckCeleb',
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
-    card: 'summary',
-    title: 'CheckCeleb - YouTube Channel Analytics',
-    description: 'Search any YouTube channel and get a breakdown of views, engagement, upload timing, and more.',
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'CheckCeleb',
+  url: URL,
+  description: DESCRIPTION,
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-[#0f0f0f] text-white antialiased">
         <header className="border-b border-[#1a1a1a] px-6 py-4 flex items-center justify-between sticky top-0 z-50 bg-[#0f0f0f]/95 backdrop-blur-sm">
           <a href="/" className="flex items-center gap-1">
