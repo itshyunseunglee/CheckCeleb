@@ -201,8 +201,8 @@ export default function SearchPage() {
             </div>
 
             {/* 직접 날짜 입력 */}
-            <div className="flex items-center gap-2">
-              <div className="flex-1">
+            <div className="flex items-center gap-2 overflow-hidden">
+              <div className="flex-1 min-w-0">
                 <p className="text-gray-500 text-xs mb-1">Start</p>
                 <input
                   type="date"
@@ -213,8 +213,8 @@ export default function SearchPage() {
                   style={{ colorScheme: 'dark' }}
                 />
               </div>
-              <span className="text-gray-600 text-sm mt-5">→</span>
-              <div className="flex-1">
+              <span className="text-gray-600 text-sm mt-5 flex-shrink-0">→</span>
+              <div className="flex-1 min-w-0">
                 <p className="text-gray-500 text-xs mb-1">End</p>
                 <input
                   type="date"
