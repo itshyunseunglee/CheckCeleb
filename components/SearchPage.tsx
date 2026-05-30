@@ -80,7 +80,7 @@ export default function SearchPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-65px)] flex flex-col items-center justify-center px-4 py-16">
+    <div className="min-h-[calc(100vh-65px)] flex flex-col items-center px-4 py-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl sm:text-5xl font-black mb-3">
           <span className="text-[#ff0000]">Check</span>
@@ -227,6 +227,66 @@ export default function SearchPage() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* SEO content */}
+      <div className="w-full max-w-2xl mt-16 space-y-12 pb-8">
+        <div>
+          <h2 className="text-white font-bold text-lg mb-4">What is CheckCeleb?</h2>
+          <p className="text-gray-400 text-sm leading-relaxed">
+            CheckCeleb is a free YouTube channel analytics tool. Search any channel by name or @handle
+            and instantly get a breakdown of views trend, engagement rate, best upload timing,
+            Shorts vs regular video performance, and a comment word cloud — no account or login required.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="text-white font-bold text-lg mb-4">What can you analyze?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              { title: 'Views Trend', desc: 'See how a channel\'s view counts have changed over time.' },
+              { title: 'Engagement Rate', desc: 'Measure likes and comments relative to total views per video.' },
+              { title: 'Upload Timing', desc: 'Find out which days of the week get the most views on average.' },
+              { title: 'Shorts vs Regular', desc: 'Compare how Shorts perform against long-form content.' },
+              { title: 'TOP 5 Videos', desc: 'See the most-viewed videos in the selected date range.' },
+              { title: 'Comment Word Cloud', desc: 'Visualize the most common words across top video comments.' },
+            ].map(({ title, desc }) => (
+              <div key={title} className="bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl p-4">
+                <p className="text-white text-sm font-medium mb-1">{title}</p>
+                <p className="text-gray-500 text-xs leading-relaxed">{desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-white font-bold text-lg mb-4">Frequently asked questions</h2>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Is it free?',
+                a: 'Yes, completely free. No signup required.',
+              },
+              {
+                q: 'Which channels can I search?',
+                a: 'Any public YouTube channel. Search by channel name or paste the @handle directly.',
+              },
+              {
+                q: 'How far back does the data go?',
+                a: 'You can set a custom date range. The default is the last 14 days, with presets up to 60 days.',
+              },
+              {
+                q: 'Why does it sometimes say "quota exceeded"?',
+                a: 'The app uses the YouTube Data API which has a daily usage limit shared across all users. If it happens, try again the next day.',
+              },
+            ].map(({ q, a }) => (
+              <div key={q} className="border-b border-[#1a1a1a] pb-4">
+                <p className="text-white text-sm font-medium mb-1">{q}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
