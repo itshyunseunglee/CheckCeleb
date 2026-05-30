@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  verification: { google: 'fQmix3taVlm19n7yQShQpyXbd63iQ2u2IQykePVAF7w' },
   title: 'CheckCeleb - YouTube Channel Analytics',
   description: 'Search any YouTube channel and get a breakdown of views, engagement, upload timing, and more.',
   openGraph: {
