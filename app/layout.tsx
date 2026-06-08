@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 
 const TITLE = 'CheckCeleb - Free YouTube Channel Analytics Tool';
@@ -87,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </a>
           </span>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
