@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@types/d3-cloud": "^1.2.9",
+    "@vercel/analytics": "^2.0.1",
     "axios": "^1.16.1",
     "d3-cloud": "^1.2.9",
     "next": "16.2.6",
